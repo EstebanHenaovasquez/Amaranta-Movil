@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:amaranta/Services/pedido_service.dart';
+import 'package:amaranta/services/pedido_service.dart';
 
 class PendingOrderService {
   static const _key = 'pending_orders';

@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import '../Models/login_respuesta.dart';
+import '../models/login_respuesta.dart';
+import 'package:amaranta/config/constants.dart';
 
 class LoginService {
   static const String baseUrl =
-      'http://AmarantaAPI.somee.com/api/Usuarios/Login';
+      '${AppConfig.apiBaseUrl}/Usuarios/Login';
   // http://amarantaapi.somee.com/api/Usuarios/Login
 
   static Future<LoginRespuesta> login(String correo, String clave) async {

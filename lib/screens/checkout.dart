@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:amaranta/Services/ubicacion_service.dart';
-import 'package:amaranta/Models/cart.dart';
-import 'package:amaranta/Services/pedido_service.dart';
-import 'package:amaranta/Services/usuario_service.dart';
+import 'package:provider/provider.dart';
+import 'package:amaranta/services/ubicacion_service.dart';
+import 'package:amaranta/models/cart.dart';
+import 'package:amaranta/services/pedido_service.dart';
+import 'package:amaranta/services/usuario_service.dart';
 import 'package:amaranta/screens/register.dart';
-import 'package:amaranta/Services/pending_order_service.dart';
+import 'package:amaranta/services/pending_order_service.dart';
 import 'package:amaranta/screens/categoria.dart';
 import 'package:amaranta/screens/orders.dart';
 
@@ -110,7 +111,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   Future<void> _submitOrder() async {
     if (!_formKey.currentState!.validate()) return;
 
-    final cart = CartModel.instance;
+    final cart = Provider.of<CartModel>(context, listen: false);
     if (cart.items.isEmpty) {
       ScaffoldMessenger.of(
         context,

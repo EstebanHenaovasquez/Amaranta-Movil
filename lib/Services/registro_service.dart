@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:amaranta/config/constants.dart';
 
 class RegistroService {
-  static const String baseUrl = 'http://AmarantaAPI.somee.com/api/Usuarios';
+  static const String baseUrl = '${AppConfig.apiBaseUrl}/Usuarios';
 
   static Future<Map<String, dynamic>> registrarUsuario(Map<String, dynamic> usuarioData) async {
     final uri = Uri.parse(baseUrl);

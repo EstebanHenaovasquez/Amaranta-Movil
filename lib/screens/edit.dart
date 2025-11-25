@@ -1,4 +1,4 @@
-import 'package:amaranta/Services/ubicacion_service.dart';
+import 'package:amaranta/services/ubicacion_service.dart';
 import 'package:flutter/material.dart';
 import '../services/usuario_service.dart';
 import 'categoria.dart';

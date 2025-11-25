@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:amaranta/Services/pedido_service.dart';
-import 'package:amaranta/Services/pending_order_service.dart';
+import 'package:amaranta/services/pedido_service.dart';
+import 'package:amaranta/services/pending_order_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:amaranta/widgets/main_navigation.dart';
 import 'order_detail.dart';
 
 class OrdersScreen extends StatefulWidget {
@@ -118,7 +119,19 @@ class _OrdersScreenState extends State<OrdersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Mis pedidos')),
+      backgroundColor: const Color(0xFFF5E6D3),
+      appBar: AppBar(
+        title: const Text(
+          'Mis Pedidos',
+          style: TextStyle(
+            color: Color(0xFF2C3E2D),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Color(0xFF2C3E2D)),
+      ),
       body:
           loading
               ? const Center(child: CircularProgressIndicator())
@@ -308,6 +321,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   ],
                 ),
               ),
+      bottomNavigationBar: const MainNavigationBar(currentIndex: 2),
     );
   }
 }

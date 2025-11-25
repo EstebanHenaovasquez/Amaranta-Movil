@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:amaranta/Services/pedido_service.dart';
+import 'package:amaranta/services/pedido_service.dart';
 
 class OrderDetailScreen extends StatefulWidget {
   final Map<String, dynamic> orderData;

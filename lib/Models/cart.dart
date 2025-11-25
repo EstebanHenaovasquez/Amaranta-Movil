@@ -13,8 +13,8 @@ class CartItem {
 }
 
 class CartModel extends ChangeNotifier {
-  CartModel._private();
-  static final CartModel instance = CartModel._private();
+  // CartModel._private();
+  // static final CartModel instance = CartModel._private();
 
   final Map<String, CartItem> _items = {};
 

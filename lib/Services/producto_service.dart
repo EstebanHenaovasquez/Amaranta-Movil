@@ -1,11 +1,12 @@
 // services/producto_service.dart
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:amaranta/Models/producto.dart';
+import 'package:amaranta/models/producto.dart';
+import 'package:amaranta/config/constants.dart';
 
 class ProductoService {
   final String baseUrl =
-      'http://AmarantaAPI.somee.com/api'; // Reemplaza con tu URL real
+      AppConfig.apiBaseUrl; // Reemplaza con tu URL real
 
   Future<List<Producto>> obtenerProductos() async {
     final response = await http.get(Uri.parse('$baseUrl/Productos'));

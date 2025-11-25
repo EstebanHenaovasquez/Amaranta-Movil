@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
+import 'package:amaranta/config/constants.dart';
 
 class UsuarioService {
-  static const String baseUrl = 'http://AmarantaAPI.somee.com/api';
+  static const String baseUrl = AppConfig.apiBaseUrl;
 
   /// ✅ Obtener CLIENTE por correo - VERSIÓN CORREGIDA
   static Future<Map<String, dynamic>?> obtenerClientePorCorreo(

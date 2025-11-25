@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:amaranta/config/constants.dart';
 
 class PedidoService {
-  static const String _baseUrl = 'http://AmarantaAPI.somee.com/api';
+  static const String _baseUrl = AppConfig.apiBaseUrl;
 
   /// ✅ Crea un pedido - USANDO EL ENDPOINT CORRECTO
   static Future<Map<String, dynamic>> crearPedidoDesdeJson(

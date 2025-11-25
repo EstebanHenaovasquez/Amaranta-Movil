@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:amaranta/config/constants.dart';
 import 'package:flutter/foundation.dart';
 
 class VerificacionService {
-  static const String baseUrl = 'http://AmarantaAPI.somee.com/api/Usuarios';
+  static const String baseUrl = '${AppConfig.apiBaseUrl}/Usuarios';
 
   static Future<bool> validarCodigo(String correo, String codigo) async {
     final url = Uri.parse('$baseUrl/VerificarCodigo');
@@ -38,7 +39,7 @@ class VerificacionService {
   static Future<bool> restablecerClave(
       String correo, String codigo, String nuevaClave) async {
     final response = await http.post(
-      Uri.parse('http://AmarantaAPI.somee.com/api/usuarios/RestablecerClave'),
+      Uri.parse('${AppConfig.apiBaseUrl}/usuarios/RestablecerClave'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode({
         'correo': correo,

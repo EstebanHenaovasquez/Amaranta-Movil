@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:amaranta/config/constants.dart';
 import 'dart:convert';
 import 'cambiar_clave.dart';
 
@@ -23,7 +24,7 @@ class _RecuperarPasswordScreenState extends State<RecuperarPasswordScreen> {
 
     final response = await http.post(
       Uri.parse(
-          'http://AMarantaAPI.somee.com/api/usuarios/EnviarCodigoRegistro'),
+          '${AppConfig.apiBaseUrl}/usuarios/EnviarCodigoRegistro'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode(correo),
     );

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:amaranta/Models/categorias.dart';
-import 'package:amaranta/Services/categoria_service.dart';
+import 'package:amaranta/models/categorias.dart';
+import 'package:amaranta/services/categoria_service.dart';
+import 'package:amaranta/widgets/main_navigation.dart';
+import 'package:amaranta/models/cart.dart';
+import 'package:provider/provider.dart';
 import 'productos_categoria.dart';
+import 'cart.dart';
 
 class CategoriasScreen extends StatefulWidget {
   const CategoriasScreen({super.key});
@@ -49,6 +53,54 @@ class _CategoriasScreenState extends State<CategoriasScreen> {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
+        actions: [
+          Consumer<CartModel>(
+            builder: (context, cart, _) {
+              if (cart.totalItems == 0) return const SizedBox();
+              return Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.shopping_cart, color: Color(0xFF2C3E2D), size: 28),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (_) => const CartScreen()),
+                        );
+                      },
+                    ),
+                    Positioned(
+                      right: 6,
+                      top: 6,
+                      child: Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFD15113),
+                          shape: BoxShape.circle,
+                        ),
+                        constraints: const BoxConstraints(
+                          minWidth: 18,
+                          minHeight: 18,
+                        ),
+                        child: Text(
+                          cart.totalItems.toString(),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body:
           cargando
@@ -159,6 +211,7 @@ class _CategoriasScreenState extends State<CategoriasScreen> {
                   ),
                 ),
               ),
+      bottomNavigationBar: const MainNavigationBar(currentIndex: 0),
     );
   }
 

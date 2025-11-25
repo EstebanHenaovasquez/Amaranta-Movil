@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:amaranta/config/constants.dart';
 import 'dart:convert';
 
 class CambiarPasswordScreen extends StatefulWidget {
@@ -39,7 +40,7 @@ class _CambiarPasswordScreenState extends State<CambiarPasswordScreen> {
     setState(() => _procesando = true);
 
     final response = await http.post(
-      Uri.parse('http://AmarantaAPI.somee.com/api/usuarios/RestablecerClave'),
+      Uri.parse('${AppConfig.apiBaseUrl}/usuarios/RestablecerClave'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode({
         'correo': widget.correo,

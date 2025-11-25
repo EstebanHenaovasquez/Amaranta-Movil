@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:amaranta/Models/categorias.dart';
+import 'package:amaranta/models/categorias.dart';
+import 'package:amaranta/config/constants.dart';
 
 class CategoriaService {
-  final String baseUrl = 'http://AmarantaAPI.somee.com/api';
+  final String baseUrl = AppConfig.apiBaseUrl;
 
   Future<List<Categoria>> obtenerCategorias() async {
     final response = await http.get(Uri.parse('$baseUrl/CProductos'));

@@ -1,11 +1,3 @@
-// import 'package:flutter/material.dart';
-// import '../Services/producto_service.dart';
-// import '../Models/producto.dart';
-
-// class Productos extends StatefulWidget {
-//   const Productos({Key? key}) : super(key: key);
-
-//   @override
 //   State<Productos> createState() => _ProductosState();
 // }
 

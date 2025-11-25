@@ -1,4 +1,4 @@
-import 'package:amaranta/Services/verificacion_service.dart';
+import 'package:amaranta/services/verificacion_service.dart';
 import 'edit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

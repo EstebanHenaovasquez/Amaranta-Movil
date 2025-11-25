@@ -1,7 +1,7 @@
 import 'package:amaranta/screens/recuperar_clave.dart';
 import 'package:amaranta/screens/verificacion.dart';
 import 'package:flutter/material.dart';
-import '../Services/login_service.dart';
+import '../services/login_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'register.dart';
 
